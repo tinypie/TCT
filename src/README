@@ -1,0 +1,4 @@
+The stable files which should not change any more are the follows:
+	error.c and error.h
+	tcpdump.c
+	class.c
