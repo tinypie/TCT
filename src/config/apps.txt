@@ -1,0 +1,180 @@
+# list of applications/protocols
+# the appid should appeared increment 
+#appid	subid	groupid	label				sublabel			description
+0	0	0	unknown			unknown			unknown application
+#
+1	0	1	http				http				world wide web
+1	1	1	http				dap				http by download accelerator plus
+1	2	1	http				freshdownload			http by fresh download
+1	3	1	http				audio				http - audio over hypertext transfer protocol
+1	4	1	http				video				http - video over hypertext transfer protocol
+1	5	1	http				cachehit			http - proxy cache hit for hypertext transfer protocol
+1	6	1	http				cachemiss			http - proxy cache miss for hypertext transfer protocol
+2	0	1	https				https				secure web
+3	0	1	tor				tor				tor - the onion router - used for anonymization
+#
+#
+4	0	2	smtp				smtp				mail forwarding
+5	0	2	pop3				pop3				post office protocol (v2 & v3)
+6	0	2	imap				imap				internet message access protocol
+7	0	2	biff				biff				bsd biff new mail notification
+#
+#
+8	0	3	smb				smb				samba
+9	0	3	ftp				ftp				file transfer protocol
+9	1	3	ftp				ftp_data			file transfer protocol (data stream)
+9	2	3	ftp				ftp_control			file transfer protocol (control)
+10	0	3	tftp				tftp				tftp - trivial file transfer protocol - used for bootstrapping
+#
+#
+11	0	4	sip				sip				session intiation protocol - internet telephone rfc 1350
+12	0	4	msn				msn_message			windows messenger
+12	1	4	msn				msn_filetranser		windows messenger file transfer
+13	0	4	yahoo				yahoo				yahoo messenger
+14	0	4	jabber			jabber			xmpp/jabber open instance messenger protocol rfc 3920
+15	0	4	qq				qq				tencent qq protocol - chinese instant messenger protocol
+16	0	4	chikka			chikka			chikka - sms service which can be used without phones
+17	0	4	irc				irc				internet relay chat
+18	0	4	gtalk				gtalk				google talk use jabber
+19	0	4	aol				aim				america online instant messenger
+19	1	4	aol				aim_web_content		aim web content - ads/news downloaded by aol instant messenger
+#
+#
+20	0	5	rtp				rtp				real time control protocol
+21	0	5	rtsp				rtsp				real time stream control protocol
+22	0	5	http_itunes			http_itunes			http itunes(apple's music program)
+23	0	5	replaytv_ivs			replaytv_ivs			replaytv internet video sharing - digital video recorder
+24	0	5	shoutcast			shoutcast			shoutcast mp3 streaming
+#
+#
+25	0	6	skype				skype				skype
+25	1	6	skype				skype2skype			skype to skype - udp voice call (program to program)
+25	2	6	skype				skypeout			skype to phone - udp voice call (program to pots phone)
+26	0	6	teamspeak			teamspeak			teampeak - voip application 
+27	0	6	ventrilo			ventrilo			ventrilo -voip
+28	0	6	h323				h323				h.323 - voice over ip
+#
+#
+29	0	7	ntp				ntp				network time
+30	0	7	dns				dns				domain name service
+31	0	7	stun				stun				simple traveral of udp trough nat
+32	0	7	tsp				tsp				berkely unix time synchronization protocol
+33	0	7	ncp				ncp				ncp
+34	0	7	whois				whois				who is
+35	0	7	ident				ident				ident authentication
+36	0	7	cvs				cvs				cvs - concurrent versions system
+37	0	7	x11				x11				x-windows
+#
+#
+38	0	8	radmin			radmin			radmin
+39	0	8	ssh				ssh				secure shell
+40	0	8	rdp				rdp				windows remote desktop protocol
+41	0	8	telnet			telnet			telnet
+42	0	8	vnc				vnc				vnc-virtual network computing. also known as rfb
+43	0	8	rlogin			rlogin			bsd rlogin
+#
+#
+44	0	9	battlefield1942		battlefield1942		battlefield 1942 - an ea game
+45	0	9	battlefield2			battlefield2			battlefield 2 - an ea game.
+46	0	9	battlefield2142		battlefield2142		battlefield 2142 - an ea game.
+47	0	9	counterstrike_source		counterstrike_source		counterstrike (using the source engine) - network game
+48	0	9	dayofdefeat_source		dayofdefeat_source		day of defeat: source - game (half-life 2 mod)
+49	0	9	doom3				doom3				doom3- computer game
+50	0	9	halflife			halflife			half life game
+51	0	9	wow				wow				world of warcraft
+52	0	9	quake				quake				quake game
+52	1	9	quake				quake_halflife		quake 2/3 game
+53	0	9	unreal			unreal			unreal game
+54	0	9	direct_play			direct_play			directplay
+55	0	9	starcraft			starcraft			starcraft game
+56	0	9	aoe				aoe				age of empires game
+57	0	9	everquest			everquest			everquest game
+58	0	9	asherons			asherons			asheron's call game
+59	0	9	blackwhite			blackwhite			black & white game
+60	0	9	halo				halo				halo game
+61	0	9	swg				swg				star wars galaxies game
+62	0	9	starsiege			starsiege			starsiege
+63	0	9	netrek			netrek			netrek
+64	0	9	yahoo_games			yahoo_games			yahoo games
+65	0	9	battlenet			battlenet			battle.net games
+66	0	9	gamespy_arcade		gamespy_arcade		gamespy arcade
+#
+#
+67	0	10	bittorrent			bittorrent			p2p filesharing
+68	0	10	xunlei			xunlei			chinese p2p filesharing
+69	0	10	napster			napster			napster
+70	0	10	edonkey			edonkey			edonkey2000
+71	0	10	fasttrack			fasttrack			like kazza, imesh, groksrter, etc
+72	0	10	kugoo				kugoo				chinese
+73	0	10	apple_juice			apple_juice			apple juice
+74	0	10	pplive			pplive			p2p streaming video
+75	0	10	soulseek			soulseek			soulseek
+76	0	10	direct_connect		direct_connect		directconnect
+77	0	10	100bao			100bao			chinese
+78	0	10	gnutella			gnutella			gnutella
+79	0	10	thecircle			thecircle			the circle
+#
+#
+80	0	11	snmp				snmp				simple network management protocol
+80	1	11	snmp				snmp_mon			snmp monitoring - simple network management protocol 
+80	2	11	snmp				snmp_trap			snmp traps - simple network management protocol
+81	0	11	icmp_echoreply		icmp_echoreply		icmp echo reply
+#
+82	0	11	icmp_unreach			icmp_unreach			icmp net unreachable
+82	1	11	icmp_unreach			icmp_unreach_net		icmp net unreachable
+82	2	11	icmp_unreach			icmp_unreach_host		icmp host unreachable
+82	3	11	icmp_unreach			icmp_unreach_protocol		icmp protocol unreachable
+82	4	11	icmp_unreach			icmp_unreach_port		icmp port unreachable
+82	5	11	icmp_unreach			icmp_unreach_needfrag		icmp fragmentation needed
+82	6	11	icmp_unreach			icmp_unreach_srcfail		icmp source route failed
+82	7	11	icmp_unreach			icmp_unreach_net_unknown	icmp destination network unknown
+82	8	11	icmp_unreach			icmp_unreach_host_unknown	icmp destination host unknown
+82	9	11	icmp_unreach			icmp_unreach_isolated		icmp source host isolated
+82	10	11	icmp_unreach			icmp_unreach_net_prohib	icmp network administratively prohibited
+82	11	11	icmp_unreach			icmp_unreach_host_prohib	icmp host administratively prohibited
+82	12	11	icmp_unreach			icmp_unreach_tosnet		icmp network unreachable for type of service
+82	13	11	icmp_unreach			icmp_unreach_toshost		icmp host unreachable for type of service
+82	14	11	icmp_unreach			icmp_unreach_filter_prohib	icmp communication administratively prohibited
+83	0	11	bgp				bgp				border gateway protocol
+84	0	11	rip				rip				routing information protocol
+85	0	11	dhcp				dhcp				dynamic host configuration protocol
+#
+#
+86	0	12	ssl				ssl				secure socket layer
+#
+# there is no 87, 88
+89	0	13	openvpn			openvpn			openvpn
+90	0	13	cisovpn			cisovpn			cisovpn
+91	0	13	http_rtsp			http_rtsp			rtsp tunneled within http
+92	0	13	ssh_tuneling			ssh_tuneling			ssh tunneling
+#
+#
+93	0	14	code_red			code_red			code red
+94	0	14	nimda				nimda				nimda worm
+#
+#
+95	0	7	echo				echo				echo
+96	0	7	daytime			daytime			day/time
+97	0	7	bootp				bootp				dhcp/bootp ip address assignment
+98	0	11	traceroute			traceroute			traceroute
+#
+#
+#
+99	0	3	file_transfer			exe				executable - microsoft pe file format
+99	1	3	file_transfer			flash				flash - macromedia flash
+99	2	3	file_transfer			gif				gif - popular image format
+99	3	3	file_transfer			html				(x)html - (extensible) hypertext markup language
+99	4	3	file_transfer			jpeg				jpeg - joint picture expert group image format
+99	5	3	file_transfer			mp3				mp3 - moving picture experts group audio layer iii
+99	6	3	file_transfer			ogg				ogg - ogg vorbis music format (not any ogg file just vorbis)
+99	7	3	file_transfer			pdf			pdf - portable document format - postscript-like format by adobe
+99	8	3	file_transfer			perl				perl - a scripting language by larry wall
+99	9	3	file_transfer			png				png - portable network graphics a popular image format
+99	10	3	file_transfer			ps				postscript - printing language
+99	11	3	file_transfer			rar				rar - the rar archive format
+99	12	3	file_transfer			rpm				rpm - redhat package management packages
+99	13	3	file_transfer			rtf				rtf - rich text format - an open document format
+99	14	3	file_transfer			tar			tar - tape archive. standard unix file archiver not just for tapes
+99	15	3	file_transfer			zip				zip - (pk|win)zip archive format
+#
+#

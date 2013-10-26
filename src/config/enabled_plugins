@@ -1,0 +1,9 @@
+# This file contains a list of plugins. 
+#
+# Each classifier have different priority according to their order in the list
+# 1st > 2nd > 3rd
+#
+# Comment out the plugins to disable them
+#
+l7
+c45 
