@@ -1,0 +1,109 @@
+                     CLASS_L7 - TIE classification plug-in
+
+1 Description
+
+The l7 plug-in has been ported from the [l7-filter] project (user-space version) 
+to work inside the TIE platform. It classifies IP traffic using a deep packet 
+inspection technique based on regular expression patterns describing application 
+layer protocols.
+
+To use the l7 plug-in you MUST enable the Session Payload Stream capture from 
+TIE command line (-S option, followed by the number of bytes of payload to be stored).
+
+1.1 Signatures
+
+ L7filter signatures are made of regular expression patterns. Each signature 
+ describes a set of strings representative of an appplication layer protocol 
+ (such as HTTP, FTP, etc.) and it is loaded from a corresponding file with .pat 
+ extension. These files have the same format used by [l7-filter] (see 3), so it
+ is possible to reuse L7-Filter protocol signatures.
+
+1.2 Matching process
+
+ At start-up, l7 plug-in loads a set of signatures as specified in a config 
+ file (config.txt) and stores them in the form of compiled regular expressions 
+ in a private single linked-list. 
+ 
+ When TIE starts the classification process for a session, the l7 plug-in copies 
+ the session payload to a temporary buffer skipping all null bytes '\0' (this is 
+ because regular expression engine uses null-terminated strings, so a null bytes 
+ in the middle of the payload may prematurely stop the engine). 
+ 
+ Then it iterates over the private linked list and tries to match each signature 
+ against the payload. If there's no match it sets the CLASS_OUT_REDO flag to state 
+ that more payload is needed to classify it. 
+ 
+ For each session the process stops when either a match is found or the configured 
+ packet-per-session limit is reached (10 packets by default).
+
+2 Configuration file
+
+The configuration file, named config.txt, is a simple text file containing various
+configuration options and it is located in plugins/l7 directory. Each line
+of the file represents a configuration option, like in the following example:
+
+       payload_dump_file=plugins/l7/logs/payload_dump.txt
+       protocol=http 1 0
+       ...
+
+Lines starting with '#' are comments.
+
+2.1 Configuration options
+
+2.1.1 Protocol option
+
+  The most important option is named "protocol" and it is used to state that a 
+  protocol signatures must be loaded during start-up process. The format is:
+  
+   protocol=<name> <id> <sub_id>
+   
+  where: 
+   - <name>:   is the name of the protocol to be loaded (also of the .pat file)
+   - <id>:     is the corresponding application id, as defined in tie_apps.txt
+   - <sub_id>: is the corresponding application sub_id, as defined in tie_apps.txt
+
+2.1.2 Max packets option
+
+  The "max_packets" option sets the maximum number of packets to work with for each 
+  session. The format is:
+  
+   max_packets=<num>
+   
+  where:
+   - <num>: is the max number of packets to wait for [default=10]
+
+2.1.3 payload_dump_file=file
+
+  payload_dump_file is valid only for a debug build of the plugin otherwise it is
+  ignored. If present, class_l7 creates a file containing print-friendly payload
+  of each classified session.
+
+3 Signature file
+
+A signature file is a simple text file, named *protocol*.pat, structured as follow:
+    - empty and blank lines are skipped
+    - lines started by a '#' is a comment
+    - the first non-comment line must be the name of the protocol
+    - next non-comment line must be the regular expression describing the pro-
+      tocol
+    - {optional} [l7-filter] use this sintax to define a different regular expres-
+      sion for the userspace version. class_l7 loads this one if present
+
+      userspace pattern=<userspace pattern>
+      userspace flags=<regexec and/or regcomp flags, whitespace delimited>
+
+4. File type classification notes
+
+ There are a few issue in file type classification:
+    - File type patterns cannot match from beginning (^) because they often appear
+      later in a session payload (e.g., in HTTP they appear after Command or optional
+      headers).
+    - There can be more than one file in a session.
+    - It's not possible to identify a file if we first match the application protocol.
+
+ So be carefull activating file type patterns!!!.
+
+
+5. References
+
+[l7-filter] L7-Filter project, http://l7-filter.sourceforge.net
